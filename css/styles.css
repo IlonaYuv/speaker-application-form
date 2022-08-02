@@ -11,23 +11,31 @@
   
   textarea {
     resize: none;
-    border-radius: 3px;
     border: 1px solid teal;
+    border-radius: 3px;
   }
   
   .form {
     width: 600px;
-    outline: 1px solid teal;
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
+    
+    border: 2px solid teal;
+    border-radius: 3px;
   }
   
   .form-field {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
   }
+  
+  .form-field.file {
+    margin-bottom: 40px;
+  }
+
   
   .form-field label {
     margin-bottom: 5px;
@@ -36,12 +44,17 @@
   .form-field input {
     margin: 0;
     padding: 10px 20px;
+    
     border-radius: 3px;
     border: 1px solid teal;
   }
+
+  .form-input {
+    color: dimgray;
+  }
   
   .form-field input::placeholder {
-    color: lightgray;
+    color: rgb(111, 177, 170, 50%);
   }
   
   .group {
@@ -51,6 +64,9 @@
   .group-title {
     margin-top: 0;
     margin-bottom: 10px;
+
+    font-size: 20px; 
+    font-weight: 600;
   }
   
   .topic-options,
@@ -65,25 +81,80 @@
     align-items: center;
   }
   
-  .topic-options input[type='checkbox'] {
-  }
+  /*.topic-options input[type='checkbox'] {
+  } */
   
-  .topic-options label {
-    font-size: 20px;
+  .topic-options label,
+  .experince-options label {
+    font-size: 16px;
     margin-left: 10px;
   }
   
   .date {
+    padding: 20px 40px;
+    
     border-width: 2px;
     border-radius: 4px;
-    padding: 20px 40px;
   }
   
   .comment {
+    width: 100%;
     padding: 8px;
+
+    color: dimgrey;
+  }
+  
+  .comment-label {
+    position: absolute;
+    top: 3%;
+    left: 20px;
+
+    transition: transform 250ms linear;
+  }
+
+  .comment:focus + .comment-label, 
+  .comment:not(:placeholder-shown) + .comment-label {
+    transform:translate(-23%, -121%);
+    
+    color:darkslateblue; 
+  }
+
+  .form-check {
+    display: flex;
+    align-items: center;
+  }
+
+  .checkbox-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  } 
+
+  .checkbox-input:checked + .icon {
+    border-color: rgb(183, 150, 240);
+    background-color: rgb(183, 150, 240);
+    background-image: url('../img/full-check.svg'); 
+    background-size: contain;
+    background-origin: border-box;
+  }
+
+  .icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 6px;
+
+    border: 2px solid deeppink;
+    border-radius: 4px;
   }
 
   .btn {
+    margin-top: 20px;
     padding: 10px;
 
     background-color: deeppink;
