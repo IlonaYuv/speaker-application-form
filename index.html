@@ -13,92 +13,128 @@
 
   <body>
     <form class="form js-speaker-form">
-      <div class="form-field">
-        <label for="name">Full Name</label>
-        <input
+      
+    <label class="form-field">
+        Full Name
+        <input 
+          class="form-input"
           type="text"
           name="name"
-          id="name"
           placeholder="John Smith"
           autofocus
         />
-      </div>
+    </label>
 
-      <div class="form-field">
-        <label for="tel">Phone</label>
-        <input type="tel" name="tel" id="tel" placeholder="+380**-000-00-00" />
-      </div>
+    <label class="form-field">
+            Phone
+        <input 
+        class="form-input"
+        type="tel" 
+        name="tel" 
+        placeholder="+380**-000-00-00" 
+        />
+    </label>
 
-      <div class="form-field">
-        <label for="mail">Email</label>
-        <input type="email" name="mail" id="mail" placeholder="my@gmail.com" />
-      </div>
+    <label class="form-field">
+            Email
+        <input 
+        class="form-input"
+        type="email" 
+        name="mail" 
+        placeholder="my@gmail.com" 
+        />
+    </label>
 
-      <div role="group" class="group">
+    <div role="group" class="group">
         <h2 class="group-title">Topics</h2>
 
         <ul class="topic-options">
           <li>
-            <input type="checkbox" name="topic" value="html" id="html" />
-            <label for="html">HTML</label>
+            <label class="checkbox-label">
+              <input class="checkbox" type="checkbox" name="topic" value="html"/>
+            HTML
+            </label>
           </li>
           <li>
-            <input type="checkbox" name="topic" value="css" id="css" />
-            <label for="css">CSS</label>
+            <label class="checkbox-label">
+              <input class="checkbox" type="checkbox" name="topic" value="css" />
+            CSS
+            </label>
           </li>
           <li>
-            <input type="checkbox" name="topic" value="js" id="js" />
-            <label for="js">JavaScript</label>
+            <label class="checkbox-label">
+              <input class="checkbox" type="checkbox" name="topic" value="js" />
+            JavaScript
+            </label>
           </li>
         </ul>
-      </div>
+    </div>
 
-      <div role="group" class="group">
+    <div role="group" class="group">
         <h2 class="group-title">Qualification level</h2>
 
         <ul class="experince-options">
           <li>
-            <input type="radio" name="experience" value="junior" id="junior" />
-            <label for="junior">Junior</label>
+            <label>
+              <input type="radio" name="experience" value="junior" />
+            Junior
+            </label>
           </li>
           <li>
-            <input type="radio" name="experience" value="middle" id="middle" />
-            <label for="middle">Middle</label>
+            <label>
+              <input type="radio" name="experience" value="middle" />
+            Middle
+            </label>
           </li>
           <li>
-            <input type="radio" name="experience" value="senior" id="senior" />
-            <label for="senior">Senior</label>
+            <label>
+              <input type="radio" name="experience" value="senior" id="senior" />
+            Senior
+            </label>
           </li>
         </ul>
-      </div>
+    </div>
+
+    <label class="form-field">
+        Speech date
+        <input 
+        class="form-input"
+        type="datetime-local" 
+        name="date" 
+        class="date" 
+        min="2022-07-07T10:00" 
+        max="2022-07-09T16:00"
+        />
+    </label>
+
+    <label class="form-field file">
+        Please, upload a copy of the speech (PDF file)
+        <input 
+        class="form-input"
+        type="file" 
+        name="pdf"
+         />
+    </label>
 
       <div class="form-field">
-        <label for="date">Speech date</label>
-        <input type="datetime-local" name="date" id="date" class="date" min="2022-07-07T10:00" max="2022-07-09T16:00"/>
-      </div>
-
-      <div class="form-field">
-        <label for="pdf">Please, upload a copy of the speech (PDF file)</label>
-        <input type="file" name="pdf" id="pdf" />
-      </div>
-
-      <div class="form-field">
-        <label for="comment">Speaker Bio</label>
         <textarea
           class="comment"
           name="comment"
           id="comment"
           rows="8"
-          placeholder="Type your answer here"
+          placeholder=" "
         ></textarea>
+        <label for="comment" class="comment-label">Speaker Bio</label>
       </div>
 
-      <div class="form-field">
-        <input type="checkbox" name="policy" id="policy" />
-        <label for="policy">I agree to receive communications regarding this application</label>
-      </div>
-
+    <label class="form-check">
+        <input class="checkbox-input" type="checkbox" name="policy" />
+        <span class="icon"></span>
+        I agree to receive communications regarding this application
+    </label>
+    
       <button type="submit" class="btn">Submit Application</button>
+    
     </form>
 
     <script>
